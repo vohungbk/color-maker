@@ -11,14 +11,21 @@
   },
   "pre-commit": "lint:staged",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
+    "classnames": "^2.3.1",
+    "framer-motion": "^6.3.11",
     "next": "12.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-color": "^2.19.3",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.2",
+    "reselect": "^4.1.6"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
@@ -26,6 +33,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.1",
     "prettier": "^2.6.2",
+    "sass": "^1.52.3",
     "typescript": "4.7.4"
   }
 }

@@ -1,0 +1,49 @@
+$mobileWidth: 320px;
+$tabletWidth: 768px;
+
+@mixin m-mobile {
+  @media only screen and (min-width: $mobileWidth) and (max-width: $tabletWidth) {
+    @content;
+  }
+}
+
+@mixin awesome-hover(
+  $direction: top,
+  $height: 100%,
+  $backgroundColor: $dark,
+  $duration: 0.65s
+) {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    #{$direction}: 0;
+    right: 0;
+    width: 0;
+    height: $height;
+    background: $backgroundColor;
+    transition: width $duration cubic-bezier(0.51, 0.18, 0, 0.98);
+    z-index: -101;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+@mixin fade-animation($duration: 0.3s, $timingFucntion: linear) {
+  animation: fade $duration $timingFucntion;
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
