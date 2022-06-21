@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { useDispatch } from 'react-redux'
 import { ListColor } from '../../shared/types'
-import { getRandomColor } from '../../shared/util'
 
 const initialState = {
   loading: false,

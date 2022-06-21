@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { useDispatch } from 'react-redux'
 import ColorSlice from './slice/ColorSlice'
 
 const reducer = combineReducers({
