@@ -17,17 +17,17 @@ const ColorContainer: FC = () => {
   const colors = useAppSelector(colorsSelector)
 
   const OnGenerateColor = useCallback(
-    () => dispatch(onGenerateColor),
+    () => dispatch(onGenerateColor()),
     [dispatch]
   )
   const PrevColor = useCallback(() => dispatch(prevColor), [dispatch])
   const NextColor = useCallback(() => dispatch(nextColor), [dispatch])
   const CopyColorToClipboard = useCallback(
-    () => dispatch(copyColorToClipboard),
+    () => dispatch(copyColorToClipboard()),
     [dispatch]
   )
   const GenerateColorIfNeeded = useCallback(
-    () => dispatch(generateColorIfNeeded),
+    () => dispatch(generateColorIfNeeded()),
     [dispatch]
   )
 

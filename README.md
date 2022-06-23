@@ -4,7 +4,8 @@ Official Website: [https://hungvo.vercel.app/](https://hungvo.vercel.app/)
 
 ## Main technology used
 
-- Nextjs, typescript
+- Nextjs, Typescript, Redux
+- React Color
 
 ## Installation
 

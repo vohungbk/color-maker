@@ -6,15 +6,14 @@ import {
   generateColorSuccess,
 } from '../slice/ColorSlice'
 import { Dispatch } from 'redux'
-import { RootState } from '../store'
+import { AppDispatch, RootState } from '../store'
 import {
   getColors,
   getNextColorIndex,
   getPrevColorIndex,
 } from '../selectors/ColorSelectors'
-import { useAppDispatch } from '../../hooks'
 
-export const onGenerateColor = () => async (dispatch: Dispatch) => {
+export const onGenerateColor = () => async (dispatch: AppDispatch) => {
   try {
     dispatch(generateColor())
     const color = await getRandomColor()
@@ -40,23 +39,23 @@ export const nextColor = () => (dispatch: Dispatch, getState: RootState) => {
 }
 
 export const copyColorToClipboard =
-  () => async (dispatch: Dispatch, getState: RootState) => {
-    const colors = getColors(getState)
+  () => async (dispatch: Dispatch, getState: () => RootState) => {
+    const colors = getColors(getState())
+
     const hasItems = colors.list.length > 0
     const currentIndex = colors.currentIndex
 
     if (hasItems && currentIndex >= 0) {
-      const successful = await copyTextToClipboard(
-        colors.list[currentIndex].color
-      )
+      const successful = await copyTextToClipboard(colors.list[currentIndex])
       dispatch(copyToClipboard(successful))
     }
   }
 
-export const generateColorIfNeeded = () => async (getState: RootState) => {
-  const dispatch = useAppDispatch()
-  const colors = getColors(getState)
-  if (colors.list.length === 0) {
-    dispatch(onGenerateColor)
+export const generateColorIfNeeded =
+  () => async (dispatch: AppDispatch, getState: () => RootState) => {
+    const state = getState()
+    const colors = getColors(state)
+    if (colors.list.length === 0) {
+      dispatch(onGenerateColor())
+    }
   }
-}

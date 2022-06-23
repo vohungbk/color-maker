@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 interface IconProps {
   children: React.ReactNode
-  className: string
+  className?: string
 }
 
 const Icon: FC<IconProps> = ({ children, className = '' }) => {

@@ -1,0 +1,20 @@
+.button {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  padding: 8px 0;
+
+  &:active {
+    transform: translate(0.5px, 0.5px);
+  }
+  &--active {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+  }
+}
+
+.awesome-hover {
+  @include awesome-hover(top, 100%);
+}

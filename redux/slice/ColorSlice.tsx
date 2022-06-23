@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ListColor } from '../../shared/types'
 
 const initialState = {
   loading: false,
   currentIndex: -1,
-  list: [] as ListColor[],
+  list: [] as string[],
   isCopied: false,
 }
 

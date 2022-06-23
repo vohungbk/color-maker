@@ -42,6 +42,7 @@ table {
 
 button {
   cursor: pointer;
+  color: #333;
 
   @include m-mobile {
     cursor: default;

@@ -5,7 +5,7 @@ export const getColors = (state: RootState) => state.ColorSlice
 
 export const colorsSelector = createSelector(getColors, (colors) => ({
   isCopied: colors.isCopied,
-  color: colors.list[colors.currentIndex]?.color,
+  color: colors.list[colors.currentIndex],
 }))
 
 export const getPrevColorIndex = createSelector(getColors, (colors) => {
