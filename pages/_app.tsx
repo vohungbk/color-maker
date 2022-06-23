@@ -24,10 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="twitter:description" content="Color maker" />
         <meta property="twitter:image" content="/images/avatar.png" />
 
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
+      
       </Head>
       <LazyMotion features={domAnimation}>
         <Provider store={store}>
